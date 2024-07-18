@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}Create SCP{% endblock %}
+
+{% block content %}
+<h1>Create New SCP</h1>
+<form method="POST">
+    <label for="number">Number:</label>
+    <input type="number" name="number" id="number" required>
+    <label for="title">Title:</label>
+    <input type="text" name="title" id="title" required>
+    <label for="content">Content:</label>
+    <textarea name="content" id="content" rows="10" required></textarea>
+    <button type="submit">Create SCP</button>
+</form>
+<a href="{{ url_for('dashboard') }}">Back to Dashboard</a>
+{% endblock %}

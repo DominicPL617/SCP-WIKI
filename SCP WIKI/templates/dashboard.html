@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Welcome, {{ name }}!</h2>
+<div class="container">
+    <div class="sidebar">
+        <h3>SCP List</h3>
+        <ul>
+            {% for scp in scps %}
+            <li><a href="{{ url_for('scp_detail', scp_id=scp.id) }}">{{ scp.title }}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="main-content">
+        <h3>Options</h3>
+        <ul>
+            <li><a href="#">Write New SCP</a></li>
+            <li><a href="#">Friends List</a></li>
+            <li><a href="#">Settings</a></li>
+        </ul>
+    </div>
+</div>
+{% endblock %}
